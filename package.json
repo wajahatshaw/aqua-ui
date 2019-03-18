@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.1",
+    "react-native-togglebox": "^1.0.3",
     "react-navigation": "^3.4.0"
   },
   "devDependencies": {
