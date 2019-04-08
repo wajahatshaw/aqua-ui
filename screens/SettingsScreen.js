@@ -15,25 +15,25 @@ import {
   SocialIcon,
   ThemeProvider,
 } from 'react-native-elements';
-import { GREY_LINE, SETTING_BG } from '../Theme/colors';
+import {
+  BLACK,
+  GREY_LINE,
+  LIGHT_BLUE,
+  PRIMARY_BLUE,
+  SETTING_BG,
+  WHITE,
+} from '../Theme/colors';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import IconEvil from 'react-native-vector-icons/EvilIcons';
 import PremiumVersionCard from '../components/PremiumVersionCard';
+import TitleHeader from '../components/Headers/titleHeader';
+import LeftHeader from '../components/Headers/leftRightHeader';
 
 class SettingsScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: (
-        <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Settings</Text>
-      ),
-      headerLeft: (
-        <TouchableOpacity
-          style={{ paddingHorizontal: 10 }}
-          onPress={() => navigation.pop()}
-        >
-          <Text style={{ color: 'blue', fontSize: 18 }}>Close</Text>
-        </TouchableOpacity>
-      ),
+      headerTitle: <TitleHeader text={'Settings'} />,
+      headerLeft: <LeftHeader navigation={navigation} text={'Close'} />,
     };
   };
 
@@ -46,10 +46,10 @@ class SettingsScreen extends Component {
 
   languageSelectorRow = () => {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.rowContainer}>
         <View style={styles.languageSelectorRowOuter}>
           <View style={{ paddingHorizontal: 10, paddingVertical: 10 }}>
-            <Text style={{ fontSize: 18, fontWeight: '500' }}>Language</Text>
+            <Text style={styles.languageText}>Language</Text>
           </View>
           <View style={styles.languageSelectorRowInner}>
             <Text style={styles.innerText}>
@@ -61,25 +61,25 @@ class SettingsScreen extends Component {
               name={'chevron-up'}
               size={40}
               color={GREY_LINE}
-              style={{ paddingLeft: 5, paddingTop: 5 }}
+              style={styles.languageIcon}
             />
           </View>
         </View>
-        <Divider style={{ backgroundColor: GREY_LINE }} />
+        <Divider style={styles.divider} />
       </View>
     );
   };
 
   checkBoxRow = (language, pressed) => {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.rowContainer}>
         <View style={styles.checkBoxRowOuter}>
           <TouchableOpacity
             style={[
               styles.checkBoxRowInner,
               {
                 backgroundColor:
-                  this.state.checked === pressed ? '#157EFB' : '#FFFFFF',
+                  this.state.checked === pressed ? PRIMARY_BLUE : WHITE,
               },
             ]}
             onPress={() => {
@@ -87,41 +87,33 @@ class SettingsScreen extends Component {
             }}
           >
             {this.state.checked === pressed ? (
-              <IconFontAwesome name={'check'} color={'#FFFFFF'} size={15} />
+              <IconFontAwesome name={'check'} color={WHITE} size={15} />
             ) : null}
           </TouchableOpacity>
           <Text style={styles.textCheckBoxRowInner}>{language}</Text>
         </View>
-        <Divider style={{ backgroundColor: GREY_LINE }} />
+        <Divider style={styles.divider} />
       </View>
     );
   };
 
   aquerakeCard = () => {
     return (
-      <Card containerStyle={{ borderRadius: 10, backgroundColor: '#FFFFFF' }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Card containerStyle={styles.aquarekaContainer}>
+        <View style={styles.aquarekaContainerOuter}>
+          <View style={styles.logoView}>
             <Avatar
               rounded={true}
               size={'medium'}
               source={require('../from-real-app/assets/logo.png')}
             />
-            <Text style={{ fontSize: 20, fontWeight: '500', paddingLeft: 20 }}>
-              Aqureake Dev
-            </Text>
+            <Text style={styles.aquarekaIconText}>Aqureake Dev</Text>
           </View>
           <View>
-            <IconFontAwesome name={'sign-out'} size={30} color={'#000000'} />
+            <IconFontAwesome name={'sign-out'} size={30} color={BLACK} />
           </View>
         </View>
-        <View style={{ alignItems: 'center' }}>
+        <View style={styles.syncText}>
           <Text>Last synchronisation: Today</Text>
         </View>
         <Button
@@ -130,18 +122,14 @@ class SettingsScreen extends Component {
             <IconFontAwesome
               name={'refresh'}
               size={20}
-              color={'#157EFB'}
-              style={{ fontWeight: '200', paddingRight: 10 }}
+              color={PRIMARY_BLUE}
+              style={styles.syncButtonIcon}
             />
           }
           type={'outline'}
-          buttonStyle={{
-            borderRadius: 10,
-            borderColor: '#157EFB',
-            borderWidth: 1,
-          }}
+          buttonStyle={styles.syncButton}
           containerStyle={{ marginTop: 15 }}
-          titleStyle={{ color: '#157EFB' }}
+          titleStyle={styles.syncButtonTitle}
         />
       </Card>
     );
@@ -149,22 +137,15 @@ class SettingsScreen extends Component {
 
   facebookCard = () => {
     return (
-      <Card containerStyle={{ borderRadius: 10, backgroundColor: '#FFFFFF' }}>
-        <View style={{ alignItems: 'center' }}>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: '700',
-              paddingLeft: 20,
-              textAlign: 'center',
-            }}
-          >
+      <Card containerStyle={styles.aquarekaContainer}>
+        <View style={styles.syncText}>
+          <Text style={styles.fbHeadingText}>
             Sign in to save your aquarium on your server
           </Text>
-          <Text style={{ textAlign: 'center', marginTop: 10 }}>
+          <Text style={styles.fbText}>
             You can download them on all your devices.
           </Text>
-          <Text style={{ textAlign: 'center' }}>
+          <Text style={styles.syncText}>
             It's completely free. Aquareka will never spam you or your friends.
             Ever
           </Text>
@@ -173,7 +154,7 @@ class SettingsScreen extends Component {
           type={'facebook'}
           title={'Sign in with Facebook'}
           button={true}
-          style={{ borderRadius: 10, marginTop: 10 }}
+          style={styles.socialIcon}
         />
       </Card>
     );
@@ -182,46 +163,26 @@ class SettingsScreen extends Component {
   render() {
     return (
       <ThemeProvider>
-        <View
-          style={{ alignItems: 'center', flex: 1, backgroundColor: SETTING_BG }}
-        >
-          <ScrollView style={{ flex: 1 }}>
-            <View style={{ backgroundColor: '#FFFFFF' }}>
+        <ScrollView style={styles.rowContainer}>
+          <View style={styles.settingView}>
+            <View style={styles.languageContainer}>
               {this.languageSelectorRow()}
               {this.checkBoxRow('English', 1)}
               {this.checkBoxRow('Deutsch', 2)}
               {this.checkBoxRow('Francais', 3)}
             </View>
-            <View
-              style={{
-                paddingHorizontal: 10,
-                paddingVertical: 10,
-                justifyContent: 'center',
-              }}
-            >
-              <Text
-                style={{ fontSize: 18, fontWeight: '500', color: GREY_LINE }}
-              >
-                Measurements
-              </Text>
+            <View style={styles.measurementContainer}>
+              <Text style={styles.measurementText}>Measurements</Text>
             </View>
-            <Divider style={{ backgroundColor: GREY_LINE }} />
+            <Divider style={styles.divider} />
             {this.aquerakeCard()}
             {this.facebookCard()}
             <PremiumVersionCard />
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </ThemeProvider>
     );
   }
-
-  getPaddingDeviceSize = () => {
-    if (Dimensions.get('window').width > 786) {
-      return { paddingHorizontal: 200 };
-    } else {
-      return { paddingHorizontal: 0 };
-    }
-  };
 }
 
 const styles = StyleSheet.create({
@@ -262,6 +223,75 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     paddingLeft: 10,
   },
+  languageIcon: {
+    paddingLeft: 5,
+    paddingTop: 5,
+  },
+  languageText: {
+    fontSize: 18,
+    fontWeight: '500',
+  },
+  divider: {
+    backgroundColor: GREY_LINE,
+  },
+  aquarekaContainer: {
+    borderRadius: 10,
+    backgroundColor: WHITE,
+  },
+  aquarekaContainerOuter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  logoView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  aquarekaIconText: {
+    fontSize: 20,
+    fontWeight: '500',
+    paddingLeft: 20,
+  },
+  syncText: { alignItems: 'center' },
+  syncButtonIcon: {
+    fontWeight: '200',
+    paddingRight: 10,
+  },
+  syncButton: {
+    borderRadius: 10,
+    borderColor: PRIMARY_BLUE,
+    borderWidth: 1,
+  },
+  syncButtonTitle: { color: PRIMARY_BLUE },
+  fbHeadingText: {
+    fontSize: 20,
+    fontWeight: '700',
+    paddingLeft: 20,
+    textAlign: 'center',
+  },
+  fbText: {
+    textAlign: 'center',
+    marginTop: 10,
+  },
+  socialIcon: {
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  rowContainer: {
+    flex: 1,
+  },
+  settingView: {
+    flex: 1,
+    backgroundColor: SETTING_BG,
+    marginHorizontal: Dimensions.get('window').width >= 1024 ? 300 : 0,
+  },
+  languageContainer: { backgroundColor: WHITE },
+  measurementContainer: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    justifyContent: 'center',
+  },
+  measurementText: { fontSize: 18, fontWeight: '500', color: GREY_LINE },
 });
 
 export default SettingsScreen;
