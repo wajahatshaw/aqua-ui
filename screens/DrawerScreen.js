@@ -4,6 +4,13 @@ import { ListItem, Divider } from 'react-native-elements';
 import { Container, Content } from 'native-base';
 import { BLACK, DRAWER_GREY, GREY_LINE, WHITE } from '../Theme/colors';
 import Icon from 'react-native-vector-icons/EvilIcons';
+import icoConfigMoon from '../selection';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+const FontIcon = createIconSetFromIcoMoon(
+    icoConfigMoon,
+    'icomoon',
+    'icons.ttf',
+);
 
 class DrawerScreen extends Component {
   static navigationOptions = {
@@ -26,27 +33,27 @@ class DrawerScreen extends Component {
         {
           id: 1,
           title: 'Catalogues',
-          icon: 'chart',
+          icon: 'catalogues',
         },
         {
           id: 2,
           title: 'Aquariums',
-          icon: 'trophy',
+          icon: 'fish',
         },
         {
           id: 1,
           title: 'Settings',
-          icon: 'gear',
+          icon: 'settings',
         },
         {
           id: 1,
           title: 'Credits',
-          icon: 'heart',
+          icon: 'credits',
         },
         {
           id: 1,
           title: 'Feedback',
-          icon: 'comment',
+          icon: 'feedback',
         },
       ],
     };
@@ -54,15 +61,15 @@ class DrawerScreen extends Component {
 
   onPressRow = text => {
     if (text === 'Catalogues') {
-      return 'Catalogues';
+      return 'catalogues';
     } else if (text === 'Aquariums') {
-      return 'Settings';
+      return 'fullscreen';
     } else if (text === 'Settings') {
-      return 'Settings';
+      return 'settings';
     } else if (text === 'Credits') {
-      return 'Settings';
-    } else {
-      return 'Settings';
+      return 'credits';
+    } else if(text === 'Feedback'){
+      return 'feedback';
     }
   };
 
@@ -76,7 +83,15 @@ class DrawerScreen extends Component {
         title={item.title}
         bottomDivider
         titleStyle={styles.text}
-        leftIcon={() => <Icon name={item.icon} color={BLACK} size={35} />}
+        leftIcon={() => {
+          return(
+              <FontIcon
+              name={item.icon}
+              color={BLACK}
+              size={30}
+              />
+          )
+        }}
         chevron
       />
     );

@@ -14,10 +14,17 @@ import { Card, Divider, Button } from 'react-native-elements';
 import { BlurView } from 'react-native-blur';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import PremiumVersionCard from '../components/PremiumVersionCard';
-import { GREY_LINE, PRIMARY_BLUE, WHITE } from '../Theme/colors';
+import {BLACK, GREY_LINE, PRIMARY_BLUE, WHITE} from '../Theme/colors';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import TitleHeader from '../components/Headers/titleHeader';
 import LeftRightHeader from '../components/Headers/leftRightHeader';
+import icoConfigMoon from '../selection';
+import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+const FontIcon = createIconSetFromIcoMoon(
+    icoConfigMoon,
+    'icomoon',
+    'icons.ttf',
+);
 
 class CataloguesScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -95,35 +102,35 @@ class CataloguesScreen extends Component {
           <Text style={styles.viewAquariumText}>Current: Livingroom 200I</Text>
           <View style={styles.viewAquariumIconView}>
             <View style={styles.viewAquariumInnerIconView}>
-              <IconFontAwesome
-                name={'product-hunt'}
-                size={40}
-                style={styles.viewAquariumIcon}
-              />
+                <FontIcon
+                    name={'fish'}
+                    color={BLACK}
+                    size={30}
+                />
               <Text style={styles.iconText}>5</Text>
             </View>
             <View style={styles.viewAquariumInnerIconView}>
-              <IconFontAwesome
-                name={'product-hunt'}
-                size={40}
-                style={styles.viewAquariumIcon}
-              />
+                <FontIcon
+                    name={'plants'}
+                    color={BLACK}
+                    size={30}
+                />
               <Text style={styles.iconText}>2</Text>
             </View>
             <View style={styles.viewAquariumInnerIconView}>
-              <IconFontAwesome
-                name={'product-hunt'}
-                size={40}
-                style={styles.viewAquariumIcon}
-              />
+                <FontIcon
+                    name={'crustacean'}
+                    color={BLACK}
+                    size={30}
+                />
               <Text style={styles.iconText}>0</Text>
             </View>
             <View style={styles.viewAquariumInnerIconView}>
-              <IconFontAwesome
-                name={'product-hunt'}
-                size={40}
-                style={styles.viewAquariumIcon}
-              />
+                <FontIcon
+                    name={'snail'}
+                    color={BLACK}
+                    size={30}
+                />
               <Text style={styles.iconText}>1</Text>
             </View>
           </View>

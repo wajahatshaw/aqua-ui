@@ -4,6 +4,9 @@ import DrawerScreen from "../screens/DrawerScreen";
 import React from "react";
 import SettingsScreen from "../screens/SettingsScreen";
 import CataloguesScreen from "../screens/CataloguesScreen";
+import CatalogueScreen from "../screens/CatalogueScreen";
+import AquariumScreen from "../screens/AquariumScreen";
+import ItemScreen from "../screens/ItemScreen";
 
 
 const AppNavigator = createStackNavigator({
@@ -14,7 +17,7 @@ const AppNavigator = createStackNavigator({
         }
     },
     Settings: {
-        screen: SettingsScreen,
+        screen: AquariumScreen,
         navigationOptions: {
             mode: 'modal'
         }

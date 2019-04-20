@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -78,6 +77,7 @@
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		F8551CB43A1F42B999250730 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C224DD74668A451D9DA8A18B /* AntDesign.ttf */; };
+		F6B3073ED9014817A9CB5E07 /* icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8256F6E088664023BA753C87 /* icons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -468,6 +468,7 @@
 		F5E9B2FD848B4726B5141B4A /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		F89F5C6222024BBBA2201366 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		FB3B692F05904BD0A4FD9693 /* libRNVectorIcons-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNVectorIcons-tvOS.a"; sourceTree = "<group>"; };
+		8256F6E088664023BA753C87 /* icons.ttf */ = {isa = PBXFileReference; name = "icons.ttf"; path = "../assets/fonts/icons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -750,6 +751,7 @@
 				11FC3AC615784DF6880B0D33 /* rubicon-icon-font.ttf */,
 				E25DF61629FF4D198F802E2F /* SimpleLineIcons.ttf */,
 				4A4E1E5774854AD1A5DEBF66 /* Zocial.ttf */,
+				8256F6E088664023BA753C87 /* icons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1354,6 +1356,7 @@
 				AFE61F6978104514B7FB4CC3 /* rubicon-icon-font.ttf in Resources */,
 				C84671131A2C4846A64EE5B0 /* SimpleLineIcons.ttf in Resources */,
 				A04ED1BC4EAC4CB188934FA5 /* Zocial.ttf in Resources */,
+				F6B3073ED9014817A9CB5E07 /* icons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
