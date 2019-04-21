@@ -66,65 +66,65 @@ class AquariumScreen extends Component {
       fishes: [
         {
           id: 1,
-          img: '',
+          key: '1',
         },
         {
           id: 2,
-          img: '',
+          key: '2',
         },
         {
           id: 3,
-          img: '',
+          key: '3',
         },
         {
           id: 4,
-          img: '',
+          key: '4',
         },
       ],
       plants: [
         {
           id: 1,
-          img: '',
+          key: '1',
         },
         {
           id: 2,
-          img: '',
+          key: '2',
         },
         {
           id: 3,
-          img: '',
+          key: '3',
         },
         {
           id: 4,
-          img: '',
+          key: '4',
         },
       ],
       crustoceans: [
         {
           id: 1,
-          img: '',
+          key: '1',
         },
         {
           id: 2,
-          img: '',
+          key: '2',
         },
         {
           id: 3,
-          img: '',
+          key: '3',
         },
       ],
       snails: [
         {
           id: 1,
-          img: '',
+          key: '1',
         },
         {
           id: 2,
-          img: '',
+          key: '2',
         },
         {
           id: 3,
-          img: '',
+          key: '3',
         },
       ],
       data: [
@@ -172,6 +172,7 @@ class AquariumScreen extends Component {
             <View>
               <FlatList
                 data={this.state.fishes}
+                keyExtractor={(item, index) => item.key}
                 horizontal={true}
                 renderItem={item => {
                   return (

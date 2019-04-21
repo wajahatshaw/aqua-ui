@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingVertical: 10,
     paddingHorizontal: 55,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   buttonStyle: {
     alignItems: 'center',

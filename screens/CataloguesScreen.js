@@ -14,16 +14,16 @@ import { Card, Divider, Button } from 'react-native-elements';
 import { BlurView } from 'react-native-blur';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import PremiumVersionCard from '../components/PremiumVersionCard';
-import {BLACK, GREY_LINE, PRIMARY_BLUE, WHITE} from '../Theme/colors';
+import { BLACK, GREY_LINE, PRIMARY_BLUE, WHITE } from '../Theme/colors';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import TitleHeader from '../components/Headers/titleHeader';
 import LeftRightHeader from '../components/Headers/leftRightHeader';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 const FontIcon = createIconSetFromIcoMoon(
-    icoConfigMoon,
-    'icomoon',
-    'icons.ttf',
+  icoConfigMoon,
+  'icomoon',
+  'icons.ttf',
 );
 
 class CataloguesScreen extends Component {
@@ -102,35 +102,19 @@ class CataloguesScreen extends Component {
           <Text style={styles.viewAquariumText}>Current: Livingroom 200I</Text>
           <View style={styles.viewAquariumIconView}>
             <View style={styles.viewAquariumInnerIconView}>
-                <FontIcon
-                    name={'fish'}
-                    color={BLACK}
-                    size={30}
-                />
+              <FontIcon name={'fish'} color={BLACK} size={30} />
               <Text style={styles.iconText}>5</Text>
             </View>
             <View style={styles.viewAquariumInnerIconView}>
-                <FontIcon
-                    name={'plants'}
-                    color={BLACK}
-                    size={30}
-                />
+              <FontIcon name={'plants'} color={BLACK} size={30} />
               <Text style={styles.iconText}>2</Text>
             </View>
             <View style={styles.viewAquariumInnerIconView}>
-                <FontIcon
-                    name={'crustacean'}
-                    color={BLACK}
-                    size={30}
-                />
+              <FontIcon name={'crustacean'} color={BLACK} size={30} />
               <Text style={styles.iconText}>0</Text>
             </View>
             <View style={styles.viewAquariumInnerIconView}>
-                <FontIcon
-                    name={'snail'}
-                    color={BLACK}
-                    size={30}
-                />
+              <FontIcon name={'snail'} color={BLACK} size={30} />
               <Text style={styles.iconText}>1</Text>
             </View>
           </View>

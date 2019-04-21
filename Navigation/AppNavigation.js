@@ -17,7 +17,7 @@ const AppNavigator = createStackNavigator({
         }
     },
     Settings: {
-        screen: AquariumScreen,
+        screen: SettingsScreen,
         navigationOptions: {
             mode: 'modal'
         }
@@ -25,6 +25,16 @@ const AppNavigator = createStackNavigator({
     Catalogues: {
         screen: CataloguesScreen
     },
+    Catalogue: {
+        screen: CatalogueScreen
+    },
+    Aquarium: {
+        screen: AquariumScreen
+    },
+    Item: {
+        screen: ItemScreen
+    }
+
 }, {
     initialRouteName: 'onBoarding'
 })

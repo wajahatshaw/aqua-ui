@@ -7,9 +7,9 @@ import Icon from 'react-native-vector-icons/EvilIcons';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 const FontIcon = createIconSetFromIcoMoon(
-    icoConfigMoon,
-    'icomoon',
-    'icons.ttf',
+  icoConfigMoon,
+  'icomoon',
+  'icons.ttf',
 );
 
 class DrawerScreen extends Component {
@@ -41,19 +41,29 @@ class DrawerScreen extends Component {
           icon: 'fish',
         },
         {
-          id: 1,
+          id: 3,
           title: 'Settings',
           icon: 'settings',
         },
         {
-          id: 1,
+          id: 4,
           title: 'Credits',
           icon: 'credits',
         },
         {
-          id: 1,
+          id: 5,
           title: 'Feedback',
           icon: 'feedback',
+        },
+        {
+          id: 6,
+          title: 'Catalogue',
+          icon: 'catalogues',
+        },
+        {
+          id: 7,
+          title: 'Item',
+          icon: 'fullscreen',
         },
       ],
     };
@@ -61,36 +71,34 @@ class DrawerScreen extends Component {
 
   onPressRow = text => {
     if (text === 'Catalogues') {
-      return 'catalogues';
+      return 'Catalogues';
     } else if (text === 'Aquariums') {
-      return 'fullscreen';
+      return 'Aquarium';
     } else if (text === 'Settings') {
-      return 'settings';
+      return 'Settings';
     } else if (text === 'Credits') {
-      return 'credits';
-    } else if(text === 'Feedback'){
-      return 'feedback';
+      return 'Credits';
+    } else if (text === 'Feedback') {
+      return 'Feedback';
+    } else if (text === 'Catalogue') {
+      return 'Catalogue';
+    } else if (text === 'Item') {
+      return 'Item';
     }
   };
-
-  onPress = item => this.props.navigation.navigate(this.onPressRow(item.title));
 
   renderItem = ({ item, index }) => {
     return (
       <ListItem
-        onPress={this.onPress}
+        onPress={() =>
+          this.props.navigation.navigate(this.onPressRow(item.title))
+        }
         key={index}
         title={item.title}
         bottomDivider
         titleStyle={styles.text}
         leftIcon={() => {
-          return(
-              <FontIcon
-              name={item.icon}
-              color={BLACK}
-              size={30}
-              />
-          )
+          return <FontIcon name={item.icon} color={BLACK} size={30} />;
         }}
         chevron
       />
