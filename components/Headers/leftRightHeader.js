@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Text, StyleSheet, TouchableOpacity, View} from 'react-native';
 import Icon from "react-native-vector-icons/EvilIcons";
+import {PRIMARY_BLUE} from "../../Theme/colors";
 
 export default class leftRightHeader extends Component {
     render() {
@@ -20,7 +21,7 @@ export default class leftRightHeader extends Component {
                         <Icon
                             name={iconName}
                             size={35}
-                            color={'blue'}
+                            color={PRIMARY_BLUE}
                             style={styles.iconStyle}
                         />
                     </TouchableOpacity>
@@ -38,6 +39,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     },
     text: {
-        color: 'blue', fontSize: 18
-    },
+        color: PRIMARY_BLUE, fontSize: 18
+    }
 });
