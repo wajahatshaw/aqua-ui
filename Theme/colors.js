@@ -6,6 +6,7 @@ export const BLACK = '#000000'
 export const WHITE = '#FFFFFF'
 export const PRIMARY_BLUE = '#157EFB'
 export const YELLOW = '#FDB54E'
+export const SKIN = '#FEE3B5'
 
 
 

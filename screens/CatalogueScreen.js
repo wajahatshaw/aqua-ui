@@ -146,13 +146,18 @@ class CatalogueScreen extends Component {
         <View style={styles.contentContainerStyle}>
           <SearchBar />
         </View>
-        <FlatList
-          data={this.state.list}
-          keyExtractor={(item, index) => item.id}
-          renderItem={item => this.CataloguesCard(item)}
-          numColumns={Dimensions.get('window').width > MAX_WIDTH_IPAD ? 2 : 1}
-          style={styles.list}
-        />
+        <Content style={styles.content}>
+          <View style={styles.listView}>
+            <FlatList
+              data={this.state.list}
+              keyExtractor={(item, index) => item.id}
+              renderItem={item => this.CataloguesCard(item)}
+              numColumns={
+                Dimensions.get('window').width > MAX_WIDTH_IPAD ? 2 : 1
+              }
+            />
+          </View>
+        </Content>
       </Container>
     );
   }
@@ -165,6 +170,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: SETTING_BG,
   },
+  content: {},
   contentContainerStyle: { backgroundColor: WHITE, paddingVertical: 10 },
   card: {
     flex: 1,
@@ -228,7 +234,7 @@ const styles = StyleSheet.create({
     top: 10,
     right: 10,
   },
-  list: {
-    marginHorizontal: Dimensions.get('window').width > MAX_WIDTH_IPAD ? 100 : 0,
+  listView: {
+    marginHorizontal: Dimensions.get('window').width >= 1024 ? 100 : 0,
   },
 });

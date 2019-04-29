@@ -13,10 +13,9 @@ class PremiumVersionCard extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.innerContainer}>
-          <Text style={styles.headingText}>Discover Quickly!</Text>
+          <Text style={styles.headingText}>{this.props.heading? this.props.heading: 'Discover Quickly!'}</Text>
           <Text style={styles.text}>
-            In the premium version you can filter for compatibility with your
-            selection
+              {this.props.subHeading? this.props.subHeading: 'In the premium version you can filter for compatibility with your selection'}
           </Text>
         </View>
         <Button

@@ -5134,6 +5134,11 @@ react-native-elements@^1.1.0:
     react-native-ratings "^6.3.0"
     react-native-status-bar-height "^2.2.0"
 
+react-native-floating-labels@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/react-native-floating-labels/-/react-native-floating-labels-1.1.9.tgz#d6f096a34f08395c3c7180de112e2769e2eb8ff2"
+  integrity sha512-fTQ+hhxr8wzv7JAnY9wlPRMLsQEFHiMC7G1tIKuEabYJjkhfRODmjeBT0XOPc4CxnCs8P5PplPww22bfJoNhYA==
+
 react-native-gesture-handler@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.1.0.tgz#2a7d545ad2e0ca23adce22b2af441ad360ecccee"

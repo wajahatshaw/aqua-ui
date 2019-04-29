@@ -12,6 +12,7 @@
     "react-native": "0.59.1",
     "react-native-blur": "^3.2.2",
     "react-native-elements": "^1.1.0",
+    "react-native-floating-labels": "^1.1.9",
     "react-native-gesture-handler": "^1.1.0",
     "react-native-togglebox": "^1.0.3",
     "react-native-vector-icons": "^6.4.2",
@@ -29,8 +30,8 @@
     "preset": "react-native"
   },
   "rnpm": {
-      "assets": [
-            "./assets/fonts/"
-      ]
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }

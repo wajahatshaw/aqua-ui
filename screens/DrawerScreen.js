@@ -38,7 +38,7 @@ class DrawerScreen extends Component {
         {
           id: 2,
           title: 'Aquariums',
-          icon: 'fish',
+          icon: 'selection_overview',
         },
         {
           id: 3,
@@ -65,6 +65,21 @@ class DrawerScreen extends Component {
           title: 'Item',
           icon: 'fullscreen',
         },
+          {
+              id: 8,
+              title: 'Edit',
+              icon: 'info',
+          },
+          {
+              id: 9,
+              title: 'Issues',
+              icon: 'fullscreen',
+          },
+          {
+              id: 10,
+              title: 'Setup',
+              icon: 'undo',
+          },
       ],
     };
   }
@@ -84,6 +99,18 @@ class DrawerScreen extends Component {
       return 'Catalogue';
     } else if (text === 'Item') {
       return 'Item';
+    } else if (text === 'Edit') {
+        return 'Edit';
+    } else if (text === 'Issues') {
+        return 'Issues';
+    } else if (text === 'Setup') {
+        return 'Setup';
+    } else if (text === 'Item') {
+        return 'Item';
+    } else if (text === 'Item') {
+        return 'Item';
+    } else if (text === 'Item') {
+        return 'Item';
     }
   };
 
