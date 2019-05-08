@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 55,
     textAlign: 'center',
+    fontFamily: 'SFProDisplay-Regular',
   },
   buttonStyle: {
     alignItems: 'center',
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: WHITE,
     fontSize: 18,
+    fontFamily: 'SFProDisplay-Regular',
   },
 });
 

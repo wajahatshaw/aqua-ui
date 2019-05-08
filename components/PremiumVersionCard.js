@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import {LIGHT_BLUE, WHITE, YELLOW} from '../Theme/colors';
+import { LIGHT_BLUE, WHITE, YELLOW } from '../Theme/colors';
 import { Button, Card } from 'react-native-elements';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -13,9 +13,13 @@ class PremiumVersionCard extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.innerContainer}>
-          <Text style={styles.headingText}>{this.props.heading? this.props.heading: 'Discover Quickly!'}</Text>
+          <Text style={styles.headingText}>
+            {this.props.heading ? this.props.heading : 'Discover Quickly!'}
+          </Text>
           <Text style={styles.text}>
-              {this.props.subHeading? this.props.subHeading: 'In the premium version you can filter for compatibility with your selection'}
+            {this.props.subHeading
+              ? this.props.subHeading
+              : 'In the premium version you can filter for compatibility with your selection'}
           </Text>
         </View>
         <Button
@@ -51,13 +55,14 @@ const styles = StyleSheet.create({
   },
   headingText: {
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: 'SFProDisplay-Bold',
     paddingLeft: 20,
     textAlign: 'center',
   },
   text: {
     textAlign: 'center',
     marginTop: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   buttonIcon: {
     fontWeight: '200',

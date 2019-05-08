@@ -60,6 +60,36 @@
 		<string>Roboto.ttf</string>
 		<string>rubicon-icon-font.ttf</string>
 		<string>icons.ttf</string>
+		<string>SFProDisplay-Black.ttf</string>
+		<string>SFProDisplay-BlackItalic.ttf</string>
+		<string>SFProDisplay-Bold.ttf</string>
+		<string>SFProDisplay-BoldItalic.ttf</string>
+		<string>SFProDisplay-Heavy.ttf</string>
+		<string>SFProDisplay-HeavyItalic.ttf</string>
+		<string>SFProDisplay-Light.ttf</string>
+		<string>SFProDisplay-LightItalic.ttf</string>
+		<string>SFProDisplay-Medium.ttf</string>
+		<string>SFProDisplay-MediumItalic.ttf</string>
+		<string>SFProDisplay-Regular.ttf</string>
+		<string>SFProDisplay-RegularItalic.ttf</string>
+		<string>SFProDisplay-Semibold.ttf</string>
+		<string>SFProDisplay-SemiboldItalic.ttf</string>
+		<string>SFProDisplay-Thin.ttf</string>
+		<string>SFProDisplay-ThinItalic.ttf</string>
+		<string>SFProDisplay-Ultralight.ttf</string>
+		<string>SFProDisplay-UltralightItalic.ttf</string>
+		<string>SFProText-Bold.ttf</string>
+		<string>SFProText-BoldItalic.ttf</string>
+		<string>SFProText-Heavy.ttf</string>
+		<string>SFProText-HeavyItalic.ttf</string>
+		<string>SFProText-Light.ttf</string>
+		<string>SFProText-LightItalic.ttf</string>
+		<string>SFProText-Medium.ttf</string>
+		<string>SFProText-MediumItalic.ttf</string>
+		<string>SFProText-Regular.ttf</string>
+		<string>SFProText-RegularItalic.ttf</string>
+		<string>SFProText-Semibold.ttf</string>
+		<string>SFProText-SemiboldItalic.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

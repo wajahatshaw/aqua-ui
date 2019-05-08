@@ -37,7 +37,7 @@ class DrawerScreen extends Component {
         },
         {
           id: 2,
-          title: 'Aquariums',
+          title: 'Aquarium',
           icon: 'selection_overview',
         },
         {
@@ -65,21 +65,36 @@ class DrawerScreen extends Component {
           title: 'Item',
           icon: 'fullscreen',
         },
-          {
-              id: 8,
-              title: 'Edit',
-              icon: 'info',
-          },
-          {
-              id: 9,
-              title: 'Issues',
-              icon: 'fullscreen',
-          },
-          {
-              id: 10,
-              title: 'Setup',
-              icon: 'undo',
-          },
+        {
+          id: 8,
+          title: 'Edit',
+          icon: 'info',
+        },
+        {
+          id: 9,
+          title: 'Issues',
+          icon: 'fullscreen',
+        },
+        {
+          id: 10,
+          title: 'Setup',
+          icon: 'undo',
+        },
+        {
+          id: 11,
+          title: 'Filters',
+          icon: 'settings',
+        },
+        {
+          id: 12,
+          title: 'Purchase',
+          icon: 'fullscreen',
+        },
+        {
+          id: 13,
+          title: 'Aquariums',
+          icon: 'catalogues',
+        },
       ],
     };
   }
@@ -87,7 +102,7 @@ class DrawerScreen extends Component {
   onPressRow = text => {
     if (text === 'Catalogues') {
       return 'Catalogues';
-    } else if (text === 'Aquariums') {
+    } else if (text === 'Aquarium') {
       return 'Aquarium';
     } else if (text === 'Settings') {
       return 'Settings';
@@ -100,17 +115,19 @@ class DrawerScreen extends Component {
     } else if (text === 'Item') {
       return 'Item';
     } else if (text === 'Edit') {
-        return 'Edit';
+      return 'Edit';
     } else if (text === 'Issues') {
-        return 'Issues';
+      return 'Issues';
     } else if (text === 'Setup') {
-        return 'Setup';
+      return 'Setup';
     } else if (text === 'Item') {
-        return 'Item';
-    } else if (text === 'Item') {
-        return 'Item';
-    } else if (text === 'Item') {
-        return 'Item';
+      return 'Item';
+    } else if (text === 'Filters') {
+      return 'Filters';
+    } else if (text === 'Purchase') {
+      return 'Purchase';
+    } else if (text === 'Aquariums') {
+      return 'Aquariums';
     }
   };
 
@@ -187,7 +204,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontWeight: '500',
+    fontFamily: 'SFProDisplay-Regular',
     paddingLeft: 8,
   },
   imageView: {

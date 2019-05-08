@@ -10,6 +10,9 @@ import ItemScreen from "../screens/ItemScreen";
 import IssuesScreen from "../screens/IssuesScreen";
 import EditScreen from "../screens/EditScreen";
 import SetupScreen from "../screens/SetupScreen";
+import FiltersScreen from "../screens/FiltersScreen";
+import PurchaseScreen from "../screens/PurchaseScreen";
+import AquariumsScreen from "../screens/AquariumsScreen";
 
 
 const AppNavigator = createStackNavigator({
@@ -45,6 +48,15 @@ const AppNavigator = createStackNavigator({
     },
     Setup: {
         screen: SetupScreen
+    },
+    Filters: {
+        screen: FiltersScreen
+    },
+    Purchase: {
+        screen: PurchaseScreen
+    },
+    Aquariums: {
+        screen: AquariumsScreen
     }
 
 }, {

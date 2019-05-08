@@ -10,7 +10,6 @@ import {
   ScrollView,
 } from 'react-native';
 import LeftRightHeader from '../components/Headers/leftRightHeader';
-import TitleHeader from '../components/Headers/titleHeader';
 import { Container, Content } from 'native-base';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
@@ -23,8 +22,14 @@ import {
   SKIN,
   WHITE,
 } from '../Theme/colors';
-import { Button, Divider, ListItem } from 'react-native-elements';
+import {
+  Button,
+  Divider,
+  ListItem,
+  ThemeProvider,
+} from 'react-native-elements';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
+import { Theme } from '../Theme/ThemeProvider';
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -217,51 +222,53 @@ class SetupScreen extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
-        <ScrollView style={styles.content}>
-          <Content contentContainerStyle={styles.contentContainer}>
-            {this.firstAquariumView()}
-            {this.warningView()}
-            {this.termsView()}
-            <Divider color={GREY_LINE} style={styles.divider} />
-            {this.checkBoxRow('I accept the terms', 1)}
-            <Divider color={GREY_LINE} style={styles.divider} />
-            <View style={styles.confirmContainer}>
-              <FontIcon name={'lightbulb'} color={GREY_LINE} size={30} />
-              <Text style={styles.confirmText}>
-                Read completely and confirm
-              </Text>
-            </View>
-            <View style={styles.settingsBg}>
-              <Text style={styles.greyText}>MANDATORY EQUIPMENT</Text>
-              <Text style={styles.greyText}>
-                Very often the best choice is to buy a complete package
-                including the tank. Send all the mandatory equipment
-              </Text>
-            </View>
-            <View style={styles.tankView}>
-              <Text style={styles.tankText}>Tank</Text>
-              <View style={styles.tankRow}>
-                <FontIcon name={'relation'} color={BLACK} size={25} />
-                <Text style={styles.greyText}>Minimum 280I</Text>
+      <ThemeProvider theme={Theme}>
+        <Container style={styles.container}>
+          <ScrollView style={styles.content}>
+            <Content contentContainerStyle={Theme.content}>
+              {this.firstAquariumView()}
+              {this.warningView()}
+              {this.termsView()}
+              <Divider color={GREY_LINE} style={Theme.divider} />
+              {this.checkBoxRow('I accept the terms', 1)}
+              <Divider color={GREY_LINE} style={Theme.divider} />
+              <View style={styles.confirmContainer}>
+                <FontIcon name={'lightbulb'} color={GREY_LINE} size={30} />
+                <Text style={styles.confirmText}>
+                  Read completely and confirm
+                </Text>
               </View>
-            </View>
-            <Divider color={GREY_LINE} style={styles.divider} />
-            {this.fishRow('fullscreen', BLACK)}
-            <Divider color={GREY_LINE} style={styles.divider} />
-            {this.flatListContent()}
-          </Content>
-        </ScrollView>
-        <View style={styles.footer}>
-          <Button
-            title={'Next'}
-            titleStyle={styles.buttonText}
-            type={'solid'}
-            buttonStyle={styles.button}
-            containerStyle={styles.buttonContainer}
-          />
-        </View>
-      </Container>
+              <View style={styles.settingsBg}>
+                <Text style={styles.greyText}>MANDATORY EQUIPMENT</Text>
+                <Text style={styles.greyText}>
+                  Very often the best choice is to buy a complete package
+                  including the tank. Send all the mandatory equipment
+                </Text>
+              </View>
+              <View style={styles.tankView}>
+                <Text style={styles.tankText}>Tank</Text>
+                <View style={styles.tankRow}>
+                  <FontIcon name={'relation'} color={BLACK} size={25} />
+                  <Text style={styles.greyText}>Minimum 280I</Text>
+                </View>
+              </View>
+              <Divider color={GREY_LINE} style={Theme.divider} />
+              {this.fishRow('fullscreen', BLACK)}
+              <Divider color={GREY_LINE} style={Theme.divider} />
+              {this.flatListContent()}
+            </Content>
+          </ScrollView>
+          <View style={styles.footer}>
+            <Button
+              title={'Next'}
+              titleStyle={styles.buttonText}
+              type={'solid'}
+              buttonStyle={styles.button}
+              containerStyle={styles.buttonContainer}
+            />
+          </View>
+        </Container>
+      </ThemeProvider>
     );
   }
 }
@@ -282,6 +289,7 @@ const styles = StyleSheet.create({
   },
   warningHeadingText: {
     marginLeft: 3,
+    fontFamily: 'SFProDisplay-Regular',
   },
   warningContainer: {
     paddingHorizontal: 15,
@@ -300,11 +308,12 @@ const styles = StyleSheet.create({
   },
   headingText: {
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: 'SFProDisplay-Bold',
     textAlign: 'center',
   },
   text: {
     marginTop: 15,
+    fontFamily: 'SFProDisplay-Regular',
   },
   divider: {
     height: 1,
@@ -332,13 +341,14 @@ const styles = StyleSheet.create({
   },
   confirmText: {
     marginLeft: 5,
-    fontWeight: '500',
+    fontFamily: 'SFProDisplay-Semibold',
     color: GREY_LINE,
   },
   greyText: {
     color: GREY_LINE,
     marginHorizontal: 15,
     marginVertical: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   confirmContainer: {
     paddingVertical: 10,
@@ -373,6 +383,7 @@ const styles = StyleSheet.create({
   label: {
     color: GREY_LINE,
     marginTop: 3,
+    fontFamily: 'SFProDisplay-Regular',
   },
   innerRow: {
     flexDirection: 'row',
@@ -388,6 +399,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: WHITE,
+    fontFamily: 'SFProDisplay-Regular',
   },
   button: {
     borderRadius: 5,
@@ -400,6 +412,7 @@ const styles = StyleSheet.create({
   },
   tankText: {
     paddingVertical: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   tankRow: {
     flexDirection: 'row',
@@ -410,7 +423,7 @@ const styles = StyleSheet.create({
   },
   listText: {
     fontSize: 20,
-    fontWeight: '500',
+    fontFamily: 'SFProDisplay-Semibold',
     paddingLeft: 8,
   },
 });

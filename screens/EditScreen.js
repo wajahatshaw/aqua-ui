@@ -5,10 +5,11 @@ import TitleHeader from '../components/Headers/titleHeader';
 var FloatingLabel = require('react-native-floating-labels');
 import { BLACK, GREY_LINE, SETTING_BG, WHITE } from '../Theme/colors';
 import { Container, Content } from 'native-base';
-import { Divider, Button } from 'react-native-elements';
+import { Divider, Button, ThemeProvider } from 'react-native-elements';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import PremiumVersionCard from '../components/PremiumVersionCard';
+import {Theme} from "../Theme/ThemeProvider";
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -106,8 +107,9 @@ class EditScreen extends Component {
 
   render() {
     return (
+      <ThemeProvider theme={Theme}>
       <Container style={styles.container}>
-        <Content contentContainerStyle={styles.content}>
+        <Content contentContainerStyle={Theme.content}>
           {this.floatingInput('Aquarium Title')}
           <Divider color={GREY_LINE} style={styles.divider} />
           {this.secondFloatingInput('Volume (litre)')}
@@ -127,12 +129,13 @@ class EditScreen extends Component {
           />
           <Button
             title={'Remove this aquarium'}
-            buttonStyle={styles.button}
-            containerStyle={styles.buttonContainer}
-            titleStyle={styles.buttonTitle}
+            buttonStyle={Theme.whiteButton}
+            containerStyle={Theme.whiteButtonContainer}
+            titleStyle={Theme.whiteButtonTitle}
           />
         </Content>
       </Container>
+      </ThemeProvider>
     );
   }
 }
@@ -168,6 +171,7 @@ const styles = StyleSheet.create({
     paddingLeft: 25,
     backgroundColor: SETTING_BG,
     fontSize: 18,
+    fontFamily: 'SFProDisplay-Regular',
   },
   fishRow: {
     flexDirection: 'row',
@@ -189,6 +193,7 @@ const styles = StyleSheet.create({
   label: {
     color: GREY_LINE,
     marginTop: 3,
+    fontFamily: 'SFProDisplay-Regular',
   },
   innerRow: {
     flexDirection: 'row',
@@ -207,5 +212,6 @@ const styles = StyleSheet.create({
   },
   buttonTitle: {
     color: 'red',
+    fontFamily: 'SFProDisplay-Regular',
   },
 });

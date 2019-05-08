@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import {GREY_LINE, SETTING_BG} from "../Theme/colors";
+import { GREY_LINE, SETTING_BG } from '../Theme/colors';
 
 class HeadingBar extends Component {
   render() {
@@ -17,12 +17,12 @@ export default HeadingBar;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: SETTING_BG,
-    marginHorizontal: 1
+    marginHorizontal: 1,
   },
   text: {
     color: GREY_LINE,
     paddingLeft: 15,
     paddingVertical: 10,
-    fontWeight: '500',
-  }
+    fontFamily: 'SFProDisplay-Semibold',
+  },
 });

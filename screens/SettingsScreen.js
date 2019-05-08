@@ -28,6 +28,7 @@ import IconEvil from 'react-native-vector-icons/EvilIcons';
 import PremiumVersionCard from '../components/PremiumVersionCard';
 import TitleHeader from '../components/Headers/titleHeader';
 import LeftHeader from '../components/Headers/leftRightHeader';
+import {Theme} from "../Theme/ThemeProvider";
 
 class SettingsScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -46,6 +47,7 @@ class SettingsScreen extends Component {
 
   languageSelectorRow = () => {
     return (
+      <ThemeProvider>
       <View style={styles.rowContainer}>
         <View style={styles.languageSelectorRowOuter}>
           <View style={{ paddingHorizontal: 10, paddingVertical: 10 }}>
@@ -65,13 +67,15 @@ class SettingsScreen extends Component {
             />
           </View>
         </View>
-        <Divider style={styles.divider} />
+        <Divider style={Theme.divider} />
       </View>
+      </ThemeProvider>
     );
   };
 
   checkBoxRow = (language, pressed) => {
     return (
+      <ThemeProvider theme={Theme}>
       <View style={styles.rowContainer}>
         <View style={styles.checkBoxRowOuter}>
           <TouchableOpacity
@@ -92,8 +96,9 @@ class SettingsScreen extends Component {
           </TouchableOpacity>
           <Text style={styles.textCheckBoxRowInner}>{language}</Text>
         </View>
-        <Divider style={styles.divider} />
+        <Divider style={Theme.divider} />
       </View>
+      </ThemeProvider>
     );
   };
 
@@ -127,7 +132,7 @@ class SettingsScreen extends Component {
             />
           }
           type={'outline'}
-          buttonStyle={styles.syncButton}
+          buttonStyle={Theme.buttonStyle}
           containerStyle={{ marginTop: 15 }}
           titleStyle={styles.syncButtonTitle}
         />
@@ -162,7 +167,7 @@ class SettingsScreen extends Component {
 
   render() {
     return (
-      <ThemeProvider>
+      <ThemeProvider theme={Theme}>
         <ScrollView style={styles.rowContainer}>
           <View style={styles.settingView}>
             <View style={styles.languageContainer}>
@@ -174,7 +179,7 @@ class SettingsScreen extends Component {
             <View style={styles.measurementContainer}>
               <Text style={styles.measurementText}>Measurements</Text>
             </View>
-            <Divider style={styles.divider} />
+            <Divider style={Theme.divider} />
             {this.aquerakeCard()}
             {this.facebookCard()}
             <PremiumVersionCard />
@@ -200,7 +205,7 @@ const styles = StyleSheet.create({
   },
   innerText: {
     fontSize: 18,
-    fontWeight: '500',
+    fontFamily: 'SFProDisplay-SemiBold',
     color: GREY_LINE,
   },
   checkBoxRowOuter: {
@@ -229,7 +234,7 @@ const styles = StyleSheet.create({
   },
   languageText: {
     fontSize: 18,
-    fontWeight: '500',
+    fontFamily: 'SFProDisplay-SemiBold',
   },
   divider: {
     backgroundColor: GREY_LINE,
@@ -249,7 +254,7 @@ const styles = StyleSheet.create({
   },
   aquarekaIconText: {
     fontSize: 20,
-    fontWeight: '500',
+    fontFamily: 'SFProDisplay-SemiBold',
     paddingLeft: 20,
   },
   syncText: { alignItems: 'center' },
@@ -265,7 +270,7 @@ const styles = StyleSheet.create({
   syncButtonTitle: { color: PRIMARY_BLUE },
   fbHeadingText: {
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: 'SFProDisplay-Bold',
     paddingLeft: 20,
     textAlign: 'center',
   },
@@ -291,7 +296,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     justifyContent: 'center',
   },
-  measurementText: { fontSize: 18, fontWeight: '500', color: GREY_LINE },
+  measurementText: {
+    fontSize: 18,
+    fontFamily: 'SFProDisplay-SemiBold',
+    color: GREY_LINE,
+  },
 });
 
 export default SettingsScreen;

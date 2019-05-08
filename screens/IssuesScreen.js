@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image, Dimensions } from 'react-native';
+import {ThemeProvider} from 'react-native-elements'
 import LeftRightHeader from '../components/Headers/leftRightHeader';
 import TitleHeader from '../components/Headers/titleHeader';
 import { Container, Content } from 'native-base';
@@ -15,6 +16,7 @@ import {
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
+import {Theme} from "../Theme/ThemeProvider";
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -125,8 +127,9 @@ class IssuesScreen extends Component {
 
   render() {
     return (
+      <ThemeProvider theme={Theme}>
       <Container style={styles.container}>
-        <Content contentContainerStyle={styles.contentContainer}>
+        <Content contentContainerStyle={[Theme.content, styles.contentContainer]}>
           <Text style={styles.text}>
             Issues with your current aquarium setup
           </Text>
@@ -155,6 +158,7 @@ class IssuesScreen extends Component {
           {this.buttonView()}
         </Content>
       </Container>
+      </ThemeProvider>
     );
   }
 }
@@ -168,13 +172,13 @@ const styles = StyleSheet.create({
   },
   content: {},
   contentContainer: {
-    backgroundColor: WHITE,
-    marginHorizontal: Dimensions.get('window').width >= 1024 ? 300 : 0,
+    backgroundColor: WHITE
   },
   text: {
     justifyContent: 'center',
     paddingHorizontal: 15,
     paddingVertical: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   volumeRow: {
     flexDirection: 'row',
@@ -191,11 +195,13 @@ const styles = StyleSheet.create({
   },
   volText: {
     marginLeft: 20,
+    fontFamily: 'SFProDisplay-Regular',
   },
   detailText: {
     color: GREY_LINE,
     fontSize: 15,
     marginLeft: 20,
+    fontFamily: 'SFProDisplay-Regular',
   },
   iconRow: {
     paddingHorizontal: 45,
@@ -206,25 +212,28 @@ const styles = StyleSheet.create({
   },
   iconRowText: {
     marginLeft: 20,
+    fontFamily: 'SFProDisplay-Regular',
   },
   iconRowTextDetail: {
     marginLeft: 20,
     color: GREY_LINE,
     fontSize: 15,
     paddingTop: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   issueContainer: {
     paddingHorizontal: 15,
     paddingVertical: 10,
   },
   headingText: {
-    fontWeight: '600',
+    fontFamily: 'SFProDisplay-Bold',
     textAlign: 'center',
     fontSize: 18,
   },
   issuesText: {
     paddingTop: 20,
     fontSize: 17,
+    fontFamily: 'SFProDisplay-Regular',
   },
   buttonView: {
     backgroundColor: SETTING_BG,
@@ -235,6 +244,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: PRIMARY_BLUE,
+    fontFamily: 'SFProDisplay-Regular',
   },
   button: {
     borderRadius: 5,

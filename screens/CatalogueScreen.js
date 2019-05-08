@@ -209,12 +209,12 @@ const styles = StyleSheet.create({
   greyText: {
     color: GREY_LINE,
     fontSize: 12,
-    fontWeight: 'bold',
+    fontFamily: 'SFProDisplay-Bold',
   },
   headingText: {
     marginTop: 5,
     fontSize: 18,
-    fontWeight: 'bold',
+    fontFamily: 'SFProDisplay-Bold',
   },
   rowSpaceBetween: {
     marginTop: 30,

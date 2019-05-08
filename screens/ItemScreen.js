@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
   cameraRowText: {
     color: GREY_LINE,
     fontSize: 15,
+    fontFamily: 'SFProDisplay-Regular',
   },
   icon: {
     marginHorizontal: 10,

@@ -14,6 +14,7 @@ import LeftRightHeader from '../components/Headers/leftRightHeader';
 import TitleHeader from '../components/Headers/titleHeader';
 import HeadingBar from '../components/HeadingBar';
 import { Container, Content } from 'native-base';
+import { ThemeProvider } from 'react-native-elements'
 import { OptimalCondition } from '../components/OptimalCondition';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
@@ -35,6 +36,7 @@ import ListButton from '../components/ListButton';
 import { BlurView } from 'react-native-blur';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { MAX_WIDTH_IPAD } from '../utils/utilities';
+import {Theme} from "../Theme/ThemeProvider";
 
 class AquariumScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -150,16 +152,18 @@ class AquariumScreen extends Component {
 
   conditionsView = () => {
     return (
+        <ThemeProvider theme={Theme}>
       <View style={styles.conditionContainer}>
         <OptimalCondition />
         <Button
           title={'Turn into real aquarium'}
           titleStyle={styles.buttonText}
           type={'outline'}
-          buttonStyle={styles.button}
+          buttonStyle={Theme.buttonStyle}
           containerStyle={styles.buttonContainer}
         />
       </View>
+        </ThemeProvider>
     );
   };
 
@@ -294,6 +298,7 @@ class AquariumScreen extends Component {
 
   render() {
     return (
+        <ThemeProvider theme={Theme}>
       <Container style={styles.container}>
         <Content style={styles.content}>
           {Dimensions.get('window').width > MAX_WIDTH_IPAD ? (
@@ -355,6 +360,7 @@ class AquariumScreen extends Component {
           )}
         </Content>
       </Container>
+        </ThemeProvider>
     );
   }
 }
@@ -388,6 +394,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: PRIMARY_BLUE,
+    fontFamily: 'SFProDisplay-Regular',
   },
   button: {
     borderRadius: 5,
@@ -414,11 +421,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  bubbleText: { fontSize: 18 },
+  bubbleText: { fontSize: 18, fontFamily: 'SFProDisplay-Regular' },
   listViewContainer: {},
   headingText: {
     color: GREY_LINE,
     marginBottom: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   listRow: { flexDirection: 'row' },
   listImage: {
@@ -437,8 +445,8 @@ const styles = StyleSheet.create({
   },
   createAquariumHeadingText: {
     fontSize: 18,
-    fontWeight: '700',
     textAlign: 'center',
+    fontFamily: 'SFProDisplay-Bold',
   },
   createAquariumText: {
     textAlign: 'center',
@@ -458,12 +466,13 @@ const styles = StyleSheet.create({
   },
   viewAquariumHeadingText: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'SFProDisplay-Bold',
     textAlign: 'center',
   },
   viewAquariumText: {
     textAlign: 'center',
     paddingLeft: 20,
+    fontFamily: 'SFProDisplay-Regular',
   },
   viewAquariumIconView: {
     flexDirection: 'row',
@@ -480,20 +489,13 @@ const styles = StyleSheet.create({
   },
   iconText: {
     fontSize: 18,
-  },
-  showButtonIcon: {
-    fontWeight: '200',
-    paddingRight: 10,
+    fontFamily: 'SFProDisplay-Regular',
   },
   showButton: {
     borderRadius: 10,
     borderColor: PRIMARY_BLUE,
     borderWidth: 1,
     backgroundColor: WHITE,
-  },
-  newButtonIcon: {
-    fontWeight: '200',
-    paddingRight: 10,
   },
   newButton: {
     borderRadius: 10,
@@ -554,6 +556,7 @@ const styles = StyleSheet.create({
   },
   itemBottomText: {
     color: 'white',
+    fontFamily: 'SFProDisplay-Regular',
   },
   floatingView: {
     flex: 1,
@@ -576,5 +579,6 @@ const styles = StyleSheet.create({
   },
   switchText: {
     fontSize: 20,
+    fontFamily: 'SFProDisplay-Regular',
   },
 });

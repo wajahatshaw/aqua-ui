@@ -10,7 +10,7 @@ import {
   StyleSheet,
   ImageBackground,
 } from 'react-native';
-import { Card, Divider, Button } from 'react-native-elements';
+import { Card, Divider, Button, ThemeProvider } from 'react-native-elements';
 import { BlurView } from 'react-native-blur';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import PremiumVersionCard from '../components/PremiumVersionCard';
@@ -20,6 +20,7 @@ import TitleHeader from '../components/Headers/titleHeader';
 import LeftRightHeader from '../components/Headers/leftRightHeader';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import {Theme} from "../Theme/ThemeProvider";
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -75,6 +76,7 @@ class CataloguesScreen extends Component {
 
   createAquariumContainer = () => {
     return (
+      <ThemeProvider theme={Theme}>
       <Card containerStyle={styles.createAquariumContainer}>
         <View>
           <Text style={styles.createAquariumHeadingText}>
@@ -86,16 +88,18 @@ class CataloguesScreen extends Component {
           <Button
             title={'Create your first aquarium'}
             type={'solid'}
-            buttonStyle={styles.createAquariumButton}
+            buttonStyle={Theme.buttonStyle}
             containerStyle={styles.createAquariumButtonContainer}
           />
         </View>
       </Card>
+      </ThemeProvider>
     );
   };
 
   viewAquariumConatiner = () => {
     return (
+       <ThemeProvider theme={Theme}>
       <Card containerStyle={styles.viewAquariumContainer}>
         <View>
           <Text style={styles.viewAquariumHeadingText}>Aquarium</Text>
@@ -124,7 +128,7 @@ class CataloguesScreen extends Component {
           <Button
             title={'Go to your aquarium'}
             type={'clear'}
-            buttonStyle={styles.createAquariumButton}
+            buttonStyle={Theme.buttonStyle}
             containerStyle={styles.createAquariumButtonContainer}
           />
           <Divider color={GREY_LINE} />
@@ -158,11 +162,13 @@ class CataloguesScreen extends Component {
           />
         </View>
       </Card>
+       </ThemeProvider>
     );
   };
 
   loginAquariumConatiner = () => {
     return (
+      <ThemeProvider theme={Theme}>
       <Card containerStyle={styles.createAquariumContainer}>
         <View>
           <Text style={styles.createAquariumHeadingText}>
@@ -174,11 +180,12 @@ class CataloguesScreen extends Component {
           <Button
             title={'Log in'}
             type={'clear'}
-            buttonStyle={styles.createAquariumButton}
+            buttonStyle={Theme.buttonStyle}
             containerStyle={styles.createAquariumButtonContainer}
           />
         </View>
       </Card>
+      </ThemeProvider>
     );
   };
 
@@ -268,7 +275,7 @@ const styles = StyleSheet.create({
   },
   createAquariumHeadingText: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'SFProDisplay-Bold',
     textAlign: 'center',
   },
   createAquariumText: {
@@ -289,7 +296,7 @@ const styles = StyleSheet.create({
   },
   viewAquariumHeadingText: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'SFProDisplay-Bold',
     textAlign: 'center',
   },
   viewAquariumText: {
@@ -305,12 +312,9 @@ const styles = StyleSheet.create({
   viewAquariumInnerIconView: {
     alignItems: 'center',
   },
-  viewAquariumIcon: {
-    padding: 5,
-    fontWeight: '500',
-  },
   iconText: {
     fontSize: 18,
+    fontFamily: 'SFProDisplay-Regular',
   },
   bubbleView: {
     borderRadius: 20,
@@ -394,6 +398,7 @@ const styles = StyleSheet.create({
   },
   itemBottomText: {
     color: 'white',
+    fontFamily: 'SFProDisplay-Regular',
   },
   container: {
     flex: 1,
@@ -419,6 +424,7 @@ const styles = StyleSheet.create({
   },
   switchText: {
     fontSize: 20,
+    fontFamily: 'SFProDisplay-Regular',
   },
 });
 
