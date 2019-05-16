@@ -21,6 +21,7 @@ import LeftRightHeader from '../components/Headers/leftRightHeader';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import {Theme} from "../Theme/ThemeProvider";
+import DeviceInfo from 'react-native-device-info';
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -72,6 +73,11 @@ class CataloguesScreen extends Component {
         },
       ],
     };
+  }
+
+  componentDidMount(){
+      const deviceId = DeviceInfo.getDeviceId();
+      console.log(deviceId)
   }
 
   createAquariumContainer = () => {
@@ -402,6 +408,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   floatingView: {
     flex: 1,

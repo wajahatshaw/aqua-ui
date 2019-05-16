@@ -17,6 +17,7 @@ import {
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import icoMoonConfig from '../selection';
 import { MAX_WIDTH_IPAD } from '../utils/utilities';
+import DeviceInfo from "react-native-device-info";
 const FontIcon = createIconSetFromIcoMoon(
   icoMoonConfig,
   'icomoon',
@@ -110,6 +111,7 @@ export default ItemScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   content: {
     flex: 0.9,

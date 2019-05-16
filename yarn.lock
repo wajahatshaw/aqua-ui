@@ -5106,6 +5106,11 @@ react-native-blur@^3.2.2:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-device-info@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-1.7.0.tgz#69809355db89d37cf1582b7a658876ce0cffc6b0"
+  integrity sha512-Ci3YPtMt7+AFYGdZ+pOSwmHw2Qt7IadfFupHMLvZGRpnwgw+ZdSuKrbv8lDGm6RKqEz7f1rXW31qqsuItSvahA==
+
 react-native-drawer@2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"

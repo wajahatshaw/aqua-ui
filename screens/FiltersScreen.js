@@ -8,6 +8,7 @@ import HeadingBar from '../components/HeadingBar';
 import { DRAWER_GREY, GREY_LINE, WHITE } from '../Theme/colors';
 import PremiumVersionCard from '../components/PremiumVersionCard';
 import {Theme} from "../Theme/ThemeProvider";
+import DeviceInfo from "react-native-device-info";
 
 class FiltersScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -65,6 +66,7 @@ class FiltersScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   content: {
     flex: 1,

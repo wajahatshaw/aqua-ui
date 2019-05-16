@@ -30,6 +30,7 @@ import {
 } from 'react-native-elements';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Theme } from '../Theme/ThemeProvider';
+import DeviceInfo from "react-native-device-info";
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -278,13 +279,14 @@ export default SetupScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
-  content: { flex: 0.88 },
+  content: { flex: 0.8 },
   contentContainer: {
     marginHorizontal: Dimensions.get('window').width >= 1024 ? 300 : 0,
   },
   footer: {
-    flex: 0.12,
+    flex: 0.1,
     backgroundColor: SETTING_BG,
   },
   warningHeadingText: {

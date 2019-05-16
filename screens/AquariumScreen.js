@@ -37,6 +37,7 @@ import { BlurView } from 'react-native-blur';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import { MAX_WIDTH_IPAD } from '../utils/utilities';
 import {Theme} from "../Theme/ThemeProvider";
+import DeviceInfo from "react-native-device-info";
 
 class AquariumScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -370,6 +371,7 @@ export default AquariumScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   content: {},
   conditionContainer: {

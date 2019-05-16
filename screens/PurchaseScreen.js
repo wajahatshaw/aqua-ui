@@ -9,6 +9,7 @@ import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { MAX_WIDTH_IPAD } from '../utils/utilities';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import {Theme} from "../Theme/ThemeProvider";
+import DeviceInfo from "react-native-device-info";
 const FontIcon = createIconSetFromIcoMoon(
   icoMoonConfig,
   'icomoon',
@@ -95,13 +96,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 15,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   content: {
-    flex: 0.875,
+    flex: 0.9,
     marginHorizontal: Dimensions.get('window').width >= 1024 ? 300 : 0,
   },
   footer: {
-    flex: 0.125,
+    flex: 0.1,
     backgroundColor: DRAWER_GREY,
     alignItems: 'center',
     justifyContent: 'center',

@@ -25,6 +25,7 @@ import { MAX_WIDTH_IPAD } from '../utils/utilities';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import HeadingBar from '../components/HeadingBar';
 import {Theme} from "../Theme/ThemeProvider";
+import DeviceInfo from "react-native-device-info";
 const FontIcon = createIconSetFromIcoMoon(
   icoMoonConfig,
   'icomoon',
@@ -286,12 +287,13 @@ class AquariumsScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   content: {
-    flex: 0.875,
+    flex: 0.9,
   },
   footer: {
-    flex: 0.125,
+    flex: 0.1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: DRAWER_GREY,

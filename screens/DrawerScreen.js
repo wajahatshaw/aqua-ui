@@ -6,6 +6,7 @@ import { BLACK, DRAWER_GREY, GREY_LINE, WHITE } from '../Theme/colors';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import icoConfigMoon from '../selection';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
+import DeviceInfo from "react-native-device-info";
 const FontIcon = createIconSetFromIcoMoon(
   icoConfigMoon,
   'icomoon',
@@ -187,6 +188,7 @@ const styles = StyleSheet.create({
   drawerContentStyle: {
     flex: 1,
     backgroundColor: DRAWER_GREY,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   flatListContainerStyle: {
     backgroundColor: WHITE,

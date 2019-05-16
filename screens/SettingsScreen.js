@@ -29,6 +29,7 @@ import PremiumVersionCard from '../components/PremiumVersionCard';
 import TitleHeader from '../components/Headers/titleHeader';
 import LeftHeader from '../components/Headers/leftRightHeader';
 import {Theme} from "../Theme/ThemeProvider";
+import DeviceInfo from "react-native-device-info";
 
 class SettingsScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -284,6 +285,7 @@ const styles = StyleSheet.create({
   },
   rowContainer: {
     flex: 1,
+      marginBottom: DeviceInfo.getDeviceId() === 'iPhone10,3'? 20: 0
   },
   settingView: {
     flex: 1,
